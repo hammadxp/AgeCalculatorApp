@@ -23,38 +23,35 @@
       <div class="mx-auto max-w-3xl rounded-3xl rounded-br-[10rem] bg-is-white p-10 text-is-off-black">
         <!-- Input -->
 
-        <form action="#" class="flex gap-4">
-          <div class="flex flex-col gap-4 font-bold">
-            <label for="daySelector" class="form-label">Day</label>
-            <!-- <input type="number" id="day" placeholder="DD" class="form-input" /> -->
-            <select name="day" id="daySelector">
-              <!-- <script>
-                for (let i = 1; i <= 31; i++) {
-                  document.write(`<option value="${i}">${i}</option>`);
-                }
-              </script> -->
-            </select>
+        <form action="#" id="age-form" class="">
+          <div class="flex gap-4">
+            <div class="flex flex-col gap-4 font-bold">
+              <label for="day-selector" class="form-label">Day</label>
+              <input type="number" id="day" placeholder="DD" class="form-input" />
+              <div id="dayError" class="form-error">Choose between 1-31</div>
+            </div>
+
+            <div class="flex flex-col gap-4 font-bold">
+              <label for="month" class="form-label">Month</label>
+              <input type="number" id="month" placeholder="MM" class="form-input" />
+            </div>
+
+            <div class="flex flex-col gap-4 font-bold">
+              <label for="year" class="form-label">Year</label>
+              <input type="number" id="year" placeholder="YYYY" class="form-input" />
+            </div>
           </div>
 
-          <div class="flex flex-col gap-4 font-bold">
-            <label for="month" class="form-label">Month</label>
-            <input type="number" id="month" placeholder="MM" class="form-input" />
-          </div>
-
-          <div class="flex flex-col gap-4 font-bold">
-            <label for="year" class="form-label">Year</label>
-            <input type="number" id="year" placeholder="YYYY" class="form-input" />
+          <div class="flex items-center gap-4">
+            <div class="h-[1px] w-full bg-is-light-grey"></div>
+            <input
+              type="image"
+              src="/public/img/icon-arrow.svg"
+              alt="Submit button image"
+              class="rounded-full bg-is-primary p-4 duration-200 hover:opacity-90"
+            />
           </div>
         </form>
-
-        <!-- Separator -->
-
-        <div class="flex items-center">
-          <div class="h-[1px] w-full bg-is-light-grey"></div>
-          <a href="#" class="rounded-full bg-is-primary p-4">
-            <img src="/public/img/icon-arrow.svg" alt="Project logo" />
-          </a>
-        </div>
 
         <!-- Output -->
 

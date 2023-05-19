@@ -10,6 +10,10 @@
   .form-input {
     @apply w-40 rounded-lg border-[1px] border-is-light-grey px-4 py-2 text-[32px] text-is-smokey-grey;
   }
+
+  .form-error {
+    @apply text-center text-xs italic;
+  }
 }
 
 /* :root {
@@ -19,3 +23,23 @@
 /* .attribution a {
   color: var(--color-link);
 } */
+
+/* #btn-submit {
+  background-image: url("/img/icon-arrow.svg");
+  border: none;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  cursor: pointer;
+} */
+
+*:focus-visible {
+  @apply focus:outline-none focus:ring-4 focus:ring-is-primary focus:ring-opacity-50;
+}
+
+#hero *:focus-visible {
+  @apply focus:ring-white;
+}
+
+#contact *:focus-visible {
+  @apply focus:ring-0;
+}
