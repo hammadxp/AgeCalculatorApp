@@ -9,11 +9,14 @@
 
   .form-input {
     @apply w-40 rounded-lg border-[1px] border-is-light-grey px-4 py-2 text-[32px] text-is-smokey-grey;
-    /* invalid:ring-2 invalid:ring-is-light-red */
   }
 
   .form-invalid-text {
     @apply text-center text-xs italic text-is-light-red;
+  }
+
+  .form-submit {
+    @apply cursor-pointer rounded-full bg-is-primary p-4;
   }
 }
 

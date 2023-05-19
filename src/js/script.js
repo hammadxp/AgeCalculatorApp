@@ -1,13 +1,39 @@
 const ageForm = document.getElementById("age-form");
 
+// Calculate Age
+
+const ageCalculator = function (birthDateRAW) {
+  const currentDate = new Date();
+  const birthDate = new Date(birthDateRAW);
+
+  const diffInMilliseconds = currentDate.getTime() - birthDate.getTime();
+  const millisecondsInADay = 24 * 60 * 60 * 1000;
+
+  const years = Math.floor(diffInMilliseconds / (millisecondsInADay * 365));
+  const months = Math.floor((diffInMilliseconds % (millisecondsInADay * 365)) / (millisecondsInADay * 30));
+  const days = Math.floor((diffInMilliseconds % (millisecondsInADay * 30)) / millisecondsInADay);
+
+  document.getElementById("calc-years").textContent = years;
+  document.getElementById("calc-months").textContent = months;
+  document.getElementById("calc-days").textContent = days;
+};
+
+// Validate Form
+
 ageForm.addEventListener("submit", function (e) {
   e.preventDefault();
+
+  // Resets calculated age
+
+  document.getElementById("calc-years").textContent = "--";
+  document.getElementById("calc-months").textContent = "--";
+  document.getElementById("calc-days").textContent = "--";
+
+  // Get form data
 
   const dayInput = document.getElementById("day-input");
   const monthInput = document.getElementById("month-input");
   const yearInput = document.getElementById("year-input");
-
-  // Get form data
 
   const day = dayInput.value;
   const month = monthInput.value;
@@ -15,7 +41,7 @@ ageForm.addEventListener("submit", function (e) {
 
   // Validate
 
-  let invalid = false;
+  let invalid;
 
   const dayInvalidText = document.getElementById("day-invalid-text");
   const monthInvalidText = document.getElementById("month-invalid-text");
@@ -87,5 +113,6 @@ ageForm.addEventListener("submit", function (e) {
 
   if (invalid) return;
 
-  console.log(`${day}-${month}-${year}`);
+  const birthDateRaw = `${month}-${day}-${year}`;
+  ageCalculator(birthDateRaw);
 });
