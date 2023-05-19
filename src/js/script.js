@@ -1,23 +1,5 @@
 const ageForm = document.getElementById("age-form");
 
-// Calculate Age
-
-const ageCalculator = function (birthDateRAW) {
-  const currentDate = new Date();
-  const birthDate = new Date(birthDateRAW);
-
-  const diffInMilliseconds = currentDate.getTime() - birthDate.getTime();
-  const millisecondsInADay = 24 * 60 * 60 * 1000;
-
-  const years = Math.floor(diffInMilliseconds / (millisecondsInADay * 365));
-  const months = Math.floor((diffInMilliseconds % (millisecondsInADay * 365)) / (millisecondsInADay * 30));
-  const days = Math.floor((diffInMilliseconds % (millisecondsInADay * 30)) / millisecondsInADay);
-
-  document.getElementById("calc-years").textContent = years;
-  document.getElementById("calc-months").textContent = months;
-  document.getElementById("calc-days").textContent = days;
-};
-
 // Validate Form
 
 ageForm.addEventListener("submit", function (e) {
@@ -116,3 +98,51 @@ ageForm.addEventListener("submit", function (e) {
   const birthDateRaw = `${month}-${day}-${year}`;
   ageCalculator(birthDateRaw);
 });
+
+// Calculate Age
+
+const ageCalculator = function (birthDateRAW) {
+  const currentDate = new Date();
+  const birthDate = new Date(birthDateRAW);
+
+  const diffInMilliseconds = currentDate.getTime() - birthDate.getTime();
+  const millisecondsInADay = 24 * 60 * 60 * 1000;
+
+  const years = Math.floor(diffInMilliseconds / (millisecondsInADay * 365));
+  const months = Math.floor((diffInMilliseconds % (millisecondsInADay * 365)) / (millisecondsInADay * 30));
+  const days = Math.floor((diffInMilliseconds % (millisecondsInADay * 30)) / millisecondsInADay);
+
+  const yearsEl = document.getElementById("calc-years");
+  const monthsEl = document.getElementById("calc-months");
+  const daysEl = document.getElementById("calc-days");
+
+  animateText(yearsEl, years);
+  animateText(monthsEl, months);
+  animateText(daysEl, days);
+};
+
+// Animate
+
+function animateText(element, maxNum) {
+  let count = 1;
+  let animationId;
+
+  function updateText() {
+    element.textContent = count;
+    count++;
+
+    if (count <= maxNum) {
+      animationId = requestAnimationFrame(updateText);
+    }
+  }
+
+  if (maxNum > 0) {
+    animationId = requestAnimationFrame(updateText);
+  }
+
+  function stopAnimation() {
+    cancelAnimationFrame(animationId);
+  }
+
+  setTimeout(stopAnimation, (maxNum - 1) * 50); // Stop the animation after reaching the maxNum, in milliseconds
+}
