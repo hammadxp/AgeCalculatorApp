@@ -4,42 +4,19 @@
 
 @layer components {
   .form-label {
-    @apply text-xs  uppercase tracking-widest text-is-smokey-grey;
+    @apply text-xs uppercase tracking-widest text-is-smokey-grey;
   }
 
   .form-input {
     @apply w-40 rounded-lg border-[1px] border-is-light-grey px-4 py-2 text-[32px] text-is-smokey-grey;
+    /* invalid:ring-2 invalid:ring-is-light-red */
   }
 
-  .form-error {
-    @apply text-center text-xs italic;
+  .form-invalid-text {
+    @apply text-center text-xs italic text-is-light-red;
   }
 }
-
-/* :root {
-  --primary: hsl(259, 100%, 65%);
-} */
-
-/* .attribution a {
-  color: var(--color-link);
-} */
-
-/* #btn-submit {
-  background-image: url("/img/icon-arrow.svg");
-  border: none;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  cursor: pointer;
-} */
 
 *:focus-visible {
-  @apply focus:outline-none focus:ring-4 focus:ring-is-primary focus:ring-opacity-50;
-}
-
-#hero *:focus-visible {
-  @apply focus:ring-white;
-}
-
-#contact *:focus-visible {
-  @apply focus:ring-0;
+  @apply focus:outline-none focus:ring-4 focus:ring-is-primary focus:ring-opacity-80;
 }

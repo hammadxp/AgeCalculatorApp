@@ -23,33 +23,30 @@
       <div class="mx-auto max-w-3xl rounded-3xl rounded-br-[10rem] bg-is-white p-10 text-is-off-black">
         <!-- Input -->
 
-        <form action="#" id="age-form" class="">
+        <form action="#" id="age-form">
           <div class="flex gap-4">
             <div class="flex flex-col gap-4 font-bold">
-              <label for="day-selector" class="form-label">Day</label>
-              <input type="number" id="day" placeholder="DD" class="form-input" />
-              <div id="dayError" class="form-error">Choose between 1-31</div>
+              <label for="day-input" class="form-label">Day</label>
+              <input type="number" placeholder="DD" id="day-input" class="form-input" />
+              <div id="day-invalid-text" class="form-invalid-text hidden">Choose between 1 to 31</div>
             </div>
 
             <div class="flex flex-col gap-4 font-bold">
-              <label for="month" class="form-label">Month</label>
-              <input type="number" id="month" placeholder="MM" class="form-input" />
+              <label for="month-input" class="form-label">Month</label>
+              <input type="number" placeholder="MM" id="month-input" class="form-input" />
+              <div id="month-invalid-text" class="form-invalid-text hidden">Choose between 1 to 12</div>
             </div>
 
             <div class="flex flex-col gap-4 font-bold">
-              <label for="year" class="form-label">Year</label>
-              <input type="number" id="year" placeholder="YYYY" class="form-input" />
+              <label for="year-input" class="form-label">Year</label>
+              <input type="number" placeholder="YYYY" id="year-input" class="form-input" />
+              <div id="year-invalid-text" class="form-invalid-text hidden">Choose between 1970 to 2023</div>
             </div>
           </div>
 
           <div class="flex items-center gap-4">
             <div class="h-[1px] w-full bg-is-light-grey"></div>
-            <input
-              type="image"
-              src="/public/img/icon-arrow.svg"
-              alt="Submit button image"
-              class="rounded-full bg-is-primary p-4 duration-200 hover:opacity-90"
-            />
+            <input type="submit" value="Submit" id="btn-submit" class="cursor-pointer" />
           </div>
         </form>
 
@@ -83,3 +80,5 @@
     </footer>
   </body>
 </html>
+
+<!-- min="1" max="31" -->
