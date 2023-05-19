@@ -3,12 +3,19 @@
 @tailwind utilities;
 
 @layer components {
+  .form-label {
+    @apply text-xs  uppercase tracking-widest text-is-smokey-grey;
+  }
+
+  .form-input {
+    @apply w-40 rounded-lg border-[1px] border-is-light-grey px-4 py-2 text-[32px] text-is-smokey-grey;
+  }
 }
 
-.attribution {
-  font-size: 11px;
-  text-align: center;
-}
-.attribution a {
-  color: hsl(228, 45%, 44%);
-}
+/* :root {
+  --primary: hsl(259, 100%, 65%);
+} */
+
+/* .attribution a {
+  color: var(--color-link);
+} */
