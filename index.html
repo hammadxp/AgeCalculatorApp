@@ -19,12 +19,14 @@
     <title>Age Calculator App</title>
   </head>
   <body class="bg-is-off-white font-Poppins">
-    <main class="pt-20">
-      <div class="mx-auto max-w-3xl rounded-3xl rounded-br-[10rem] bg-is-white p-10 text-is-off-black">
+    <main class="px-8 pt-16 608px:pt-20">
+      <div
+        class="mx-auto max-w-3xl rounded-3xl rounded-br-[10rem] bg-is-white p-10 pb-12 text-is-off-black 608px:px-6 608px:py-16"
+      >
         <!-- Input -->
 
         <form action="#" id="age-form">
-          <div class="flex gap-4">
+          <div class="grid max-w-lg grid-cols-3 gap-4">
             <div class="flex flex-col gap-4 font-bold">
               <label for="day-input" class="form-label">Day</label>
               <input type="number" placeholder="DD" id="day-input" class="form-input" />
@@ -44,9 +46,10 @@
             </div>
           </div>
 
-          <div class="flex items-center gap-2">
+          <div class="flex items-center gap-2 py-2 608px:py-10">
             <div class="h-[1px] w-full bg-is-light-grey"></div>
             <input type="image" src="/img/icon-arrow.svg" class="form-submit" />
+            <div class="hidden h-[1px] w-full bg-is-light-grey 608px:block"></div>
           </div>
         </form>
 

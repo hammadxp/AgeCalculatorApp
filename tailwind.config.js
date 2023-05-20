@@ -14,11 +14,11 @@ module.exports = {
         "is-light-grey": "hsl(0, 0%, 86%)",
         "is-smokey-grey": "hsl(0, 1%, 44%)",
         "is-off-black": "hsl(0, 0%, 8%)",
-
         "is-link": "hsl(228, 45%, 44%)",
       },
     },
     screens: {
+      "608px": { max: "608px" },
       sm: { max: "375px" },
     },
   },
